@@ -17,6 +17,6 @@ if data is not None:
     if st.button("Submit Query", type="primary"):
         with st.spinner("Analyzing..."):
             result = agent.run(query)
-        st.success("Done!")
-        response =  "" if "Agent stopped due to iteration limit or time limit." in result.get("output", "") else result
-        st.text_area("Response", value=response, height=200)
+        response =  None if "Agent stopped due to iteration limit or time limit." in result.get("output", "") else result.get("output", "")
+        if response :
+            st.text_area("", value=response, height=200)
