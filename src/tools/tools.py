@@ -5,7 +5,7 @@ import pandas as pd
 from langchain.tools import BaseTool
 from pydantic import BaseModel, PrivateAttr, ValidationError
 
-from src.tools.schemas import (
+from tools.schemas import (
     PlotParamsNA,
     PlotParamsDensity,
     PlotParamsParallelCategories,
@@ -20,7 +20,7 @@ from src.tools.schemas import (
     PlotParamsStackedBar,
     PlotParamsBoxPlot,
 )
-from src.tools.plots import (
+from tools.plots import (
     bar_chart_plot_na,
     density_plot,
     parallel_categories_plot,
@@ -33,7 +33,7 @@ from src.tools.plots import (
     stacked_bar_count_plot,
     boxplot_plot,
 )
-from src.tools.state import DataFrameState
+from tools.state import DataFrameState
 
 
 def _parse_tool_input(tool_input: Union[str, dict]) -> Union[str, dict]:

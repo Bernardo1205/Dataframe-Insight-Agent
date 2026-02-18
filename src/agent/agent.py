@@ -1,6 +1,6 @@
 import pandas as pd
 from .factory import create_agent
-from src.tools.tools import (
+from tools.tools import (
     CountingNA,
     DensityPlotTool,
     ParallelCategoriesTool,
@@ -15,7 +15,7 @@ from src.tools.tools import (
     DatasetModifyTool,
     TextResponseTool,
 )
-from src.tools.state import DataFrameState
+from tools.state import DataFrameState
 
 
 class Agent:

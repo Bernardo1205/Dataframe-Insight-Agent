@@ -1,7 +1,7 @@
 import pandas as pd
 import streamlit as st
 
-from src.agent.agent import Agent
+from agent.agent import Agent
 
 st.title("DataFrame Agent")
 
@@ -18,4 +18,5 @@ if data is not None:
         with st.spinner("Analyzing..."):
             result = agent.run(query)
         st.success("Done!")
-        st.text_area("Response", value=result.get("output", ""), height=200)
+        response =  "" if "Agent stopped due to iteration limit or time limit." in result.get("output", "") else result
+        st.text_area("Response", value=response, height=200)
